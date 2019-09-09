@@ -87,12 +87,12 @@ wrap_gss_inquire_names_for_mech(void *fp,
 OM_uint32
 wrap_gss_canonicalize_name(void *fp,
 	OM_uint32 *minor_status,
-	gss_const_name_t input_name,
+	const gss_name_t input_name,
 	const gss_OID mech_type,
 	gss_name_t *output_name)
 {
 	return ((OM_uint32(*)(
-		OM_uint32 *, gss_const_name_t, const gss_OID, gss_name_t *)
+		OM_uint32 *, const gss_name_t, const gss_OID, gss_name_t *)
 	)fp)(
 		minor_status, input_name, mech_type, output_name);
 }
